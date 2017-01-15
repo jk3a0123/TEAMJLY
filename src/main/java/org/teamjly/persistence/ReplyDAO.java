@@ -1,5 +1,8 @@
 package org.teamjly.persistence;
 
-public class ReplyDAO {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ReplyDAO {
 
 }

@@ -1,5 +1,8 @@
 package org.teamjly.persistence;
 
-public class NoticeDAO {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface NoticeDAO {
 
 }
