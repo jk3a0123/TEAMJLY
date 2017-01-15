@@ -5,4 +5,20 @@
 <mapper namespace="org.teamjly.mapper.ReplyMapper">
 
 
+	<insert id="create">
+		insert into tbl_reply (bno , mno , content) values ( #{bno} , #{mno} , #{content} )
+	</insert>
+	
+	<select id="read" resultType="ReplyVO">
+		select r.rno , r.bno , m.nickname , r.content , r.regdate  from tbl_member m, (select * from tbl_reply where bno = #{bno} ) r where r.mno = m.mno;
+	</select>
+	
+	<update id="update">
+		update tbl_reply set bno = #{bno} , mno = #{mno} , content = #{content} where rno = #{rno}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_reply where bno = #{bno}
+	</delete>
+	
 </mapper>

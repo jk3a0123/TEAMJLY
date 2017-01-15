@@ -7,6 +7,7 @@ public class ReplyVO {
 	private Integer bno;
 	private String content;
 	private String regdate;
+	private String nickname;
 	
 	public Integer getRno() {
 		return rno;
@@ -38,11 +39,20 @@ public class ReplyVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	
+	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	@Override
 	public String toString() {
 		return "ReplyVO [rno=" + rno + ", mno=" + mno + ", bno=" + bno + ", content=" + content + ", regdate=" + regdate
-				+ "]";
+				+ ", nickname=" + nickname + "]";
 	}
+
 
 
 }
