@@ -6,8 +6,7 @@ public class MemberVO {
 	private String id;
 	private String password;
 	private String nickname;
-	private String profileimage;
-	
+	private String profile_image;
 	
 	public Integer getMno() {
 		return mno;
@@ -33,20 +32,18 @@ public class MemberVO {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public String getProfileimage() {
-		return profileimage;
+	public String getProfile_image() {
+		return profile_image;
 	}
-	public void setProfileimage(String profileimage) {
-		this.profileimage = profileimage;
+	public void setProfile_image(String profile_image) {
+		this.profile_image = profile_image;
 	}
 	
 	@Override
 	public String toString() {
 		return "MemberVO [mno=" + mno + ", id=" + id + ", password=" + password + ", nickname=" + nickname
-				+ ", profileimage=" + profileimage + "]";
+				+ ", profile_image=" + profile_image + "]";
 	}
-	
-	
 	
 	
 }

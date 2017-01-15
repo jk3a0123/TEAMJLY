@@ -5,8 +5,10 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 import org.teamjly.domain.MemberVO;
 
+@Repository
 public class MemberDAOImpl implements MemberDAO {
 	
 	@Inject
@@ -21,25 +23,25 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public void create(MemberVO vo) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.insert(NAME+"create", vo);
 
 	}
 
 	@Override
 	public MemberVO read(Integer mno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return sqlSession.selectOne(NAME+"read",mno);
 	}
 
 	@Override
 	public void update(MemberVO vo) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.update(NAME+"update", vo);
 
 	}
 
 	@Override
-	public void delete(MemberVO vo) throws Exception {
-		// TODO Auto-generated method stub
+	public void delete(Integer mno) throws Exception {
+		sqlSession.delete(NAME+"delete",mno);
 
 	}
 

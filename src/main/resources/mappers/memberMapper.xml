@@ -12,4 +12,16 @@
 		insert into tbl_member(id,password,nickname,profile_image) values (#{id},#{password},#{nickname},#{profile_image})
 	</insert>
 	
+	<select id="read" resultType="MemberVO">
+		select * from tbl_member where mno= #{mno}
+	</select>
+	
+	<update id="update" parameterType="MemberVO">
+		update tbl_member set password= #{password},nickname= #{nickname},profile_image= #{profile_image} where mno= #{mno}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_member where mno= #{mno} 
+	</delete>
+	
 </mapper>

@@ -14,5 +14,5 @@ public List<AttendVO> list() throws Exception;
 	
 	public void update(AttendVO vo) throws Exception;
 	
-	public void delete(AttendVO vo) throws Exception;
+	public void delete(Integer ano) throws Exception;
 }
