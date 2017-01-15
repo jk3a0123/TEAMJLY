@@ -65,7 +65,7 @@ public class MosaicDAOTest {
 	public void registerTest() throws Exception{
 		MosaicVO vo = new MosaicVO();
 		vo.setBno(3);
-		vo.setMosaicimage("test3");
+		vo.setMosaicimage("test5");
 		mosaicService.register(vo);
 	}
 	

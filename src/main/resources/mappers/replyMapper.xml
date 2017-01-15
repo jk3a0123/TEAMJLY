@@ -21,7 +21,7 @@
 	</delete>
 	
 	<select id="list" resultType="ReplyVO">
-		select * from tbl_reply where bno = #{bno} order by rno;
+		select * from tbl_reply where bno = #{bno} order by rno
 	</select>
 	
 </mapper>
