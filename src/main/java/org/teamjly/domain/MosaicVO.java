@@ -5,7 +5,7 @@ public class MosaicVO {
 	private Integer ino;
 	private Integer bno;
 	private String mosaicimage;
-
+	
 	public Integer getIno() {
 		return ino;
 	}

@@ -1,5 +1,8 @@
 package org.teamjly.service;
 
-public class ReplyService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface ReplyService {
 
 }

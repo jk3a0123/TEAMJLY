@@ -10,5 +10,20 @@
 	values(#{title}, #{writer}, #{opendate}, #{closedate}, #{boardimage})
 	</insert>
 
+	<select id="read" resultType="BoardVO">
+		select * from tbl_board where bno = #{bno}
+	</select>
+
+	<update id="update" parameterType="BoardVO">
+		update tbl_board set updatedate = #{updatedate} where bno = #{bno}
+	</update>
+
+	<delete id="delete">
+		delete from tbl_board where bno = #{bno}
+	</delete>
+
+	<select id="list" resultType="BoardVO">
+		select * from tbl_board
+	</select>
 
 </mapper>

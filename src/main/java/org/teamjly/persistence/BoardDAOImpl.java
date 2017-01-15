@@ -18,32 +18,27 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void create(BoardVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		sqlSession.insert(NAME + "create", vo);
 	}
 
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAME + "read", bno);
 	}
 
 	@Override
 	public void update(BoardVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		sqlSession.update(NAME + "update", vo);
 	}
 
 	@Override
 	public void delete(Integer bno) throws Exception {
-		// TODO Auto-generated method stub
-		
+		sqlSession.delete(NAME + "delete", bno);
 	}
 
 	@Override
 	public List<BoardVO> list() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList(NAME + "list");
 	}
 	
 	
