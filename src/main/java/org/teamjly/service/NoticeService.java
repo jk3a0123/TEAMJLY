@@ -1,5 +1,6 @@
 package org.teamjly.service;
 
+
 import java.util.List;
 
 import org.teamjly.domain.NoticeVO;
@@ -16,5 +17,6 @@ public interface NoticeService {
 	public void remove(Integer nno);
 	
 	public List<NoticeVO> getList();
+
 
 }

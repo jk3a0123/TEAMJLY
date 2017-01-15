@@ -1,8 +1,7 @@
 package org.teamjly.persistence;
 
-import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 import org.teamjly.domain.ReplyVO;
 
 
