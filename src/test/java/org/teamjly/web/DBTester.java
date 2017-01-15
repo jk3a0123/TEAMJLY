@@ -25,7 +25,4 @@ public class DBTester {
 		System.out.println(con);
 		con.close();
 	}
-	
-	
-	
 }
