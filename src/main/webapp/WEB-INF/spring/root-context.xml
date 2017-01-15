@@ -40,8 +40,8 @@
 
 		<tx:annotation-driven /> -->
 
-		<context:component-scan base-package="org.teamjly.persistence"></context:component-scan>
-		<context:component-scan base-package="org.teamjly.service"></context:component-scan>
+<!-- 		<context:component-scan base-package="org.teamjly.persistence"></context:component-scan>
+		<context:component-scan base-package="org.teamjly.service"></context:component-scan> -->
 		
 		
 		
