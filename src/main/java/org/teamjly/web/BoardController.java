@@ -9,9 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.teamjly.domain.BoardVO;
+
+import org.teamjly.domain.MemberVO;
+
 import org.teamjly.service.BoardService;
+import org.teamjly.service.MemberService;
 
 @Controller
 @RequestMapping("/front")
@@ -21,12 +26,28 @@ public class BoardController {
 	
 	@Inject
 	private BoardService boardService;
-	
 
+	@Inject
+	private MemberService memberService;
+	
+	@GetMapping("/memberRegister")
+	public void memberRegisterGet() throws Exception{
+		logger.info("get board memberRegister...");
+	}
+	
+	@PostMapping("/memberRegister")
+	public String memberRegisterPost(MemberVO vo) throws Exception{
+		logger.info("get board memberRegister... :" + vo);
+		memberService.register(vo);
+		
+		return "redirect:/front/list";
+	}
+	
 	@GetMapping("/boardlist")
 	public void getList(Model model){
 		logger.info("get board list...");
-		model.addAttribute("list", boardService.getlist());	
+		model.addAttribute("list", boardService.getlist());
+
 	}
 	
 	@GetMapping("/boardview")

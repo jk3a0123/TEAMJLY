@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.teamjly.mapper.contactMapper">
+  
+  <select id="list" resultType="ContactVO">
+  	select * from tbl_contact where cno >0
+  </select>
+  
+  <insert id="create" parameterType="ContactVO">
+  	insert into tbl_contact(mno,subject,content,file) values(#{mno},#{subject},#{content},#{file})
+  </insert>
+  
+  <select id="read" resultType="ContactVO">
+  	select * from tbl_contact where cno=#{cno}
+  </select>
+	
+  <update id="update" parameterType="ContactVO">
+  	update tbl_contact set mno= #{mno},subject= #{subject},content= #{content},file=#{file} where cno= #{cno}
+  </update>	  
+  	
+  <delete id="delete">
+  	delete from tbl_contact where cno=#{cno}
+  </delete>
+  
+</mapper>
