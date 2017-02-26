@@ -5,9 +5,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <title>Insert title here</title>
 </head>
 <body>
 		<h1>난 리스트다!</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">img</div>
+		<div class="col-md-8">text</div>
+	</div>
+		<div class="row">
+		<div class="col-md-8">img</div>
+		<div class="col-md-4">text</div>
+	</div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
