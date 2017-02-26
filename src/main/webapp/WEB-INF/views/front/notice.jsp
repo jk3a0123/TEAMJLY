@@ -12,24 +12,30 @@
 <ul>
 									<c:forEach items="${list}"  var = "list" >
 												<li>
-														<a href = "/front/noticeview?nno=${list.nno}">${list.nno},  ${list.title}, ${list.id}, ${list.views}, ${list.regdate}, ${list.updatedate}</a>
+														<a href = "/front/noticeview?nno=${list.nno}">  ${list.nno},  ${list.title}, ${list.id}, ${list.views}, ${list.regdate}, ${list.updatedate}</a>
 												</li>
 									</c:forEach>
 </ul>
 
-<form  action="/front/noticeregister"  mehtod="get">
-<input type="button"  value = "클릭" id="goregister"></input>
+<form  action="/front/noticeregister"  mehtod="get"  id="registerpage">
+		<input type="button"  value = "클릭"  id="goregister">
 </form>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <script>
 $(document).ready(function (){
 	 
 		$("#goregister").on("click", function(event){
 				console.log(event);
+				$("#registerpage").submit();
 		});
 	
+		
+		
+		
+		
 });
 
 </script>

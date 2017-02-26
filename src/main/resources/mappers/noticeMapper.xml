@@ -5,7 +5,7 @@
 <mapper namespace="org.teamjly.mapper.NoticeMapper">
 
 	<insert id="create">
-		insert into tbl_notice (title , content , mno , views ) values ( #{title} , #{content} , #{mno} , #{views});
+		insert into tbl_notice (title , content , mno) values ( #{title} , #{content} , #{mno});
 	</insert>
 	
 	<select id="read" resultType="NoticeVO"> 

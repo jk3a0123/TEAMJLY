@@ -31,7 +31,6 @@ public class NoticeDAOServiceTest {
 		vo.setTitle("daoTest title");
 		vo.setContent("daoTest content");
 		vo.setMno(1);
-		vo.setViews(0);
 		
 		dao.create(vo);
 

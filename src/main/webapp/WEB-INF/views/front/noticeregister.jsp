@@ -8,8 +8,26 @@
 </head>
 <body>
 
-
-
+<form action ="/front/noticeregister"  method = "post" id="register">
+	<input type="text"  name = "title"> 
+	<input type="text"  name = "content"> 
+	<input type="post"  name = "mno" > 
+   <input type="button"  id="regbtn" value = "클릭"></button>
+</form>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function (){
+	 
+	$("#regbtn").on("click", function(event){
+		console.log(event);
+		$("#register").submit();
+	});
+	
+});
+	
+
+
+</script>
 </html>
