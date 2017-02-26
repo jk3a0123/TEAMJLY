@@ -10,7 +10,7 @@
 	<form method="post" id="messageForm" action="/front/sendMseesage">
 	
 	<div><input type="hidden" name="cto" id="cto" value="1"></div>
-	<div>보내는 사람<input type="text" name="mno" id="mno" value="${mno }"readonly="readonly"></div>
+	<div>보내는 사람<input type="text" name="mno" id="mno" value="${mno}"readonly="readonly"></div>
 	<div>제목<input type="text" name="subject" id="subject"/></div>
 	<div>내용<input type="textarea" name="content" id="content"/></div>
 	<div>파일<input type="file" name="file" id="file"></div>

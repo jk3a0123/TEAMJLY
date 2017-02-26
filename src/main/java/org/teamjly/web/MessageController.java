@@ -24,11 +24,11 @@ public class MessageController {
 	ContactService contactService;
 	
 	@GetMapping("/sendMessage")
-	public void sendMessageGet(@RequestParam("mno")String mno,Model model) throws Exception{
+	public void sendMessageGet(Integer mno,Model model) throws Exception{
 		logger.info("들어왔다.");
-//		logger.info(""+mno);
-//		
-//		model.addAttribute("mno", mno);
+		logger.info(""+mno);
+		
+		model.addAttribute("mno", mno);
 	}
 	
 	
@@ -43,12 +43,14 @@ public class MessageController {
 	public void MessageListGet(@RequestParam("mno")Integer mno,Model model) throws Exception{
 		logger.info("여긴 메세지 리스트");
 		model.addAttribute("contactVO", contactService.getContactMemberList(mno));
+		model.addAttribute("mno",mno);
 	}
 	
 	@GetMapping("/messageView")
 	public void messageViewGet(@RequestParam("cno")Integer cno,Model model) throws Exception{
 		logger.info("여긴 메세지 뷰");
 		model.addAttribute("contactVO", contactService.view(cno));
+		
 	}
 	
 }

@@ -16,9 +16,20 @@
 		
 		</c:forEach>
 		</div>
-		<a href="sendMessage?mno=${contactVO.mno}"><input type="button" value="건의"></a>
+		<input type="button" value="건의" id="sendmsg">
 		
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$("#sendmsg").on("click",function(){
+			
+			console.log("click..." + ${mno});
+			$("<form method='get' action='sendMessage'><input type='hidden' name='mno' value='"+${mno}+"'></form>").appendTo("body").submit();
+			});
+		});
+		</script>
+
 </body>
 </html>

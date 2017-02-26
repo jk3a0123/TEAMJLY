@@ -20,6 +20,12 @@ public class ContactVO {
 	public void setMno(Integer mno) {
 		this.mno = mno;
 	}
+	public Integer getCto() {
+		return cto;
+	}
+	public void setCto(Integer cto) {
+		this.cto = cto;
+	}
 	public String getSubject() {
 		return subject;
 	}
@@ -40,8 +46,8 @@ public class ContactVO {
 	}
 	@Override
 	public String toString() {
-		return "ContactVO [cno=" + cno + ", mno=" + mno + ", subject=" + subject + ", content=" + content + ", file="
-				+ file + "]";
+		return "ContactVO [cno=" + cno + ", mno=" + mno + ", cto=" + cto + ", subject=" + subject + ", content="
+				+ content + ", file=" + file + "]";
 	}
 	
 	
