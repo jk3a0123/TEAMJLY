@@ -1,5 +1,7 @@
 package org.teamjly.web;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -20,6 +22,7 @@ public class NoticeDAOServiceTest {
 	@Inject
 	NoticeService service;
 	
+	
 	@Test
 	public void createTest() throws Exception{
 		
@@ -27,8 +30,7 @@ public class NoticeDAOServiceTest {
 		
 		vo.setTitle("daoTest title");
 		vo.setContent("daoTest content");
-		vo.setWriter("daoTest zetsubou");
-		vo.setViews(0);
+		vo.setMno(1);
 		
 		dao.create(vo);
 
@@ -45,7 +47,7 @@ public class NoticeDAOServiceTest {
 		NoticeVO vo = new NoticeVO();
 		vo.setTitle("updateTest title");
 		vo.setContent("updateTest content");
-		vo.setWriter("updateTest zetsubou");
+		vo.setMno(1);
 		vo.setViews(1);
 		vo.setNno(3);
 		dao.update(vo);	
@@ -56,6 +58,15 @@ public class NoticeDAOServiceTest {
 		dao.delete(3);
 	}
 	
+	@Test
+	public void ListTest() throws Exception{
+		List<NoticeVO> list = dao.getList();
+		for(int i = 0 ; i < list.size(); i++){
+			System.out.println(list.get(i));
+		}
+	}
+	
+	
 	// ---------------------- Service --------------------------
 	
 	@Test
@@ -63,7 +74,7 @@ public class NoticeDAOServiceTest {
 		NoticeVO vo = new NoticeVO();
 		vo.setTitle("regTest title");
 		vo.setContent("regTest content");
-		vo.setWriter("regTest zetsubou");
+		vo.setMno(1);
 		vo.setViews(0);
 		service.register(vo);
 	}
@@ -79,7 +90,7 @@ public class NoticeDAOServiceTest {
 		vo.setNno(5);
 		vo.setTitle("regTest title1");
 		vo.setContent("regTest content1");
-		vo.setWriter("regTest zetsubou1");
+		vo.setMno(1);
 		vo.setViews(1);
 		service.modify(vo);
 	}

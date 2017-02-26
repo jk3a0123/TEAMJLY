@@ -18,7 +18,7 @@ public class NoticeDAOImpl implements NoticeDAO{
 
 	@Override
 	public void create(NoticeVO vo) throws Exception {
-		sqlSession.insert(NAME + "create" , vo);		
+		sqlSession.insert(NAME + "create" , vo);
 	}
 
 	@Override

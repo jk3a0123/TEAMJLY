@@ -7,7 +7,8 @@ public class NoticeVO {
 	private Integer nno;
 	private String title;
 	private String content;
-	private String writer;
+	private Integer mno;
+	private String id;
 	private Integer views;
 	private Date regdate;
 	private Date updatedate;
@@ -29,11 +30,17 @@ public class NoticeVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getWriter() {
-		return writer;
+	public Integer getMno() {
+		return mno;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setMno(Integer mno) {
+		this.mno = mno;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public Integer getViews() {
 		return views;
@@ -55,8 +62,10 @@ public class NoticeVO {
 	}
 	@Override
 	public String toString() {
-		return "NoticeVO [nno=" + nno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", views="
-				+ views + ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
+		return "NoticeVO [nno=" + nno + ", title=" + title + ", content=" + content + ", mno=" + mno + ", id=" + id
+				+ ", views=" + views + ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
 	}
+	
+	
 	
 }

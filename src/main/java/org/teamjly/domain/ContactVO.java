@@ -49,6 +49,6 @@ public class ContactVO {
 		return "ContactVO [cno=" + cno + ", mno=" + mno + ", cto=" + cto + ", subject=" + subject + ", content="
 				+ content + ", file=" + file + "]";
 	}
-	
+
 	
 }

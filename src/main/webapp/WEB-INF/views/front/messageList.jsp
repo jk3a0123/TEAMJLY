@@ -22,11 +22,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
 		<script type="text/javascript">
-		$(document).ready(function() {
+		$(document).ready(function(event) {
 			$("#sendmsg").on("click",function(){
-			
+			event.preventDefault();
 			console.log("click..." + ${mno});
-			$("<form method='get' action='sendMessage'><input type='hidden' name='mno' value='"+${mno}+"'></form>").appendTo("body").submit();
+			$("<form method='get' action='sendMessage'><input type='hidden' name='mno' value='"+${mno}+"'></form>").appendTo("body").submit();	
 			});
 		});
 		</script>

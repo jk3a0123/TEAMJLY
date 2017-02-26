@@ -47,7 +47,6 @@ public class BoardController {
 	public void getList(Model model){
 		logger.info("get board list...");
 		model.addAttribute("list", boardService.getlist());
-
 	}
 	
 	@GetMapping("/boardview")
