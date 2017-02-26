@@ -4,6 +4,7 @@ public class ContactVO {
 	
 	private Integer cno;
 	private Integer mno;
+	private Integer cto;
 	private String subject;
 	private String content;
 	private String file;

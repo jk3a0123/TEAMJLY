@@ -68,6 +68,20 @@ public class ContactServiceImpl implements ContactService{
 			e.printStackTrace();
 		}
 	}
+
+
+	@Override
+	public List<ContactVO> getContactMemberList(Integer mno) {
+		List<ContactVO> list = null;
+		
+		try{
+			list = dao.memberlist(mno);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
 	
 	
 }

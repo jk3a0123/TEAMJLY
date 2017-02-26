@@ -8,8 +8,12 @@
   	select * from tbl_contact where cno >0
   </select>
   
+  <select id="memberlist" resultType="ContactVO">
+  	select * from tbl_contact where mno =#{mno}
+  </select>
+  
   <insert id="create" parameterType="ContactVO">
-  	insert into tbl_contact(mno,subject,content,file) values(#{mno},#{subject},#{content},#{file})
+  	insert into tbl_contact(mno,cto,subject,content,file) values(#{mno},#{cto},#{subject},#{content},#{file})
   </insert>
   
   <select id="read" resultType="ContactVO">
@@ -17,7 +21,7 @@
   </select>
 	
   <update id="update" parameterType="ContactVO">
-  	update tbl_contact set mno= #{mno},subject= #{subject},content= #{content},file=#{file} where cno= #{cno}
+  	update tbl_contact set mno= #{mno}, cto= #{cto} ,subject= #{subject},content= #{content},file=#{file} where cno= #{cno}
   </update>	  
   	
   <delete id="delete">

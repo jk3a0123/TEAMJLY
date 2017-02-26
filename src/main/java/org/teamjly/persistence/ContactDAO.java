@@ -15,4 +15,6 @@ public interface ContactDAO {
 	public void delete(Integer cno) throws Exception;
 	
 	public List<ContactVO> list() throws Exception;
+	
+	public List<ContactVO> memberlist(Integer mno) throws Exception;
 }

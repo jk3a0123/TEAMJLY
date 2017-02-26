@@ -6,8 +6,8 @@
 <mapper namespace="org.teamjly.mapper.BoardMapper">
 
 	<insert id="create" parameterType="BoardVO">
-	insert into tbl_board(title, writer, opendate, closedate, boardimage)
-	values(#{title}, #{writer}, #{opendate}, #{closedate}, #{boardimage})
+	insert into tbl_board(title, writer, opendate, closedate, boardimage , content)
+	values(#{title}, #{writer}, #{opendate}, #{closedate}, #{boardimage} , #{content})
 	</insert>
 
 	<select id="read" resultType="BoardVO">
@@ -23,7 +23,7 @@
 	</delete>
 
 	<select id="list" resultType="BoardVO">
-		select * from tbl_board
+		select * from tbl_board order by bno desc;
 	</select>
 
 </mapper>

@@ -12,7 +12,14 @@ public class BoardVO {
 	private Date opendate;
 	private Date closedate;
 	private String boardimage;
+	private String content;
 	
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 	public Integer getBno() {
 		return bno;
 	}
@@ -65,7 +72,8 @@ public class BoardVO {
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", writer=" + writer + ", regdate=" + regdate
 				+ ", updatedate=" + updatedate + ", opendate=" + opendate + ", closedate=" + closedate + ", boardimage="
-				+ boardimage + "]";
+				+ boardimage + ", content=" + content + "]";
 	}
+
 	
 }
