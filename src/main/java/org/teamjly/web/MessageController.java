@@ -31,6 +31,7 @@ public class MessageController {
 //		model.addAttribute("mno", mno);
 	}
 	
+	
 	@PostMapping("/sendMseesage")
 	public String sendMessagePost(ContactVO vo) throws Exception{
 		logger.info("Post 들어왔다. : VO : " + vo);
