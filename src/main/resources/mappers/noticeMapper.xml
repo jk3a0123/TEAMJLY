@@ -5,7 +5,7 @@
 <mapper namespace="org.teamjly.mapper.NoticeMapper">
 
 	<insert id="create">
-		insert into tbl_notice (title , content , writer , views ) values ( #{title} , #{content} , #{writer} , #{views});
+		insert into tbl_notice (title , content , mno , views ) values ( #{title} , #{content} , #{mno} , #{views});
 	</insert>
 	
 	<select id="read" resultType="NoticeVO"> 
@@ -22,7 +22,14 @@
 	</delete>
 	
 	<select id="list" resultType="NoticeVO">
-		select * from tbl_notice order by nno
+		select t1.nno, t1.title, t2.id, t1.views, t1.regdate, t1.updatedate from (
+select *  from tbl_notice) t1, tbl_member t2 
+where t1.mno = t2.mno
 	</select>
+
+
+
+
+
 
 </mapper>

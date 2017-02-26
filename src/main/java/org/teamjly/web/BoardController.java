@@ -26,17 +26,7 @@ public class BoardController {
 		logger.info("get board list...");
 
 		model.addAttribute("list", boardService.getlist());
-
-		
 	
 	}
-	
-	
-
-	
-	
-	
-	
-	
 	
 }
