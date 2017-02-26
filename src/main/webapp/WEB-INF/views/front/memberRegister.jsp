@@ -6,18 +6,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 </head>
-<body>
-	<form method="post" id="messageForm" action="/front/sendMseesage">
-	
-	<input type="text" name="mno" id="mno"/>
-	<input type="text" name="subject" id="subject"/>
-	<input type="text" name="content" id="content"/>
-	<input type="file" name="file" id="file">
-	
+<body>	
+	<h1> 회원 가입</h1>
+	<form method="post" id="memberRegisterForm">
+		아이디(이메일)<input type="email" name="id" id="id">
+		비밀번호<input type="password" name="password" id="password">
+		닉네임<input type="text" name="nickname" id="nickname">
+		<!-- <input type="text" name="authority" id="authority"> -->
+		파일<input type="file" name="profile_image" id="profile_image">
+		
 	</form>
-	<input type="button" value="버튼" id="regBtn">
-	
-	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+		<input type="button" value="버튼" id="regBtn">
+		
+		<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
@@ -30,7 +31,7 @@
 			  };
 			  firebase.initializeApp(config);
    		    var storage = firebase.storage();
-   		    var downloadRef =  storage.refFromURL("gs://kb141-17d6a.appspot.com/ContactFile/");
+   		    var downloadRef =  storage.refFromURL("gs://kb141-17d6a.appspot.com/MemberFile/");
    		    var uploadRef = storage.ref();
 
    		    // login
@@ -52,13 +53,12 @@
    		    });
    			
 		 	$("#regBtn").on("click", function () {
- 	   		$("#content").val($("#content").val().replace(/\n/g, "<br>"));
  	   		
- 	   		var image = $("#file")[0].files;
+ 	   		var image = $("#profile_image")[0].files;
  	   		console.log(image);
 			for(var i = 0 ; i < image.length ; i ++){
 				/* $("<input type='hidden' name='imagenames' value='"+ image[i].name+"'>").appendTo("#sending"); */ 
-				var uploadURL = uploadRef.child("ContactFile/" + image[i].name);
+				var uploadURL = uploadRef.child("MemberFile/" + image[i].name);
 			    var uploadTask = uploadURL.put(image[i]); 
 			    
 			    uploadTask.on('state_changed', function(snapshot){
@@ -70,7 +70,7 @@
 			            // Handle successful uploads on complete
 			            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 			            var downloadURL = uploadTask.snapshot.downloadURL;
-			            $("#messageForm").attr("method","post").submit();
+			            $("#memberRegisterForm").attr("method","post").submit();
 			       });
 			}
 			
