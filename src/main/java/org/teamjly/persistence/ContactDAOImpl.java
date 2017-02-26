@@ -41,5 +41,10 @@ public class ContactDAOImpl implements ContactDAO{
 	public List<ContactVO> list() throws Exception {
 		return sqlSession.selectList(NAME+"list");
 	}
+
+	@Override
+	public List<ContactVO> memberlist(Integer mno) throws Exception {
+		return sqlSession.selectList(NAME+"memberlist",mno);
+	}
 	
 }

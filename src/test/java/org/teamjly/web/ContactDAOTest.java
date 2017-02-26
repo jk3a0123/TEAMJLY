@@ -24,6 +24,11 @@ public class ContactDAOTest {
 		System.out.println(dao.list());
 	}
 	
+	@Test
+	public void ContactmemberlistTest() throws Exception{
+		System.out.println(dao.memberlist(1));
+	}
+	
 	//=================================== Service ===========================
 	
 	@Test
@@ -31,6 +36,9 @@ public class ContactDAOTest {
 		System.out.println(service.getContactList());
 	}
 	
-	
+	@Test
+	public void getContactMemberListTest() throws Exception{
+		System.out.println(service.getContactMemberList(1));
+	}
 	
 }

@@ -8,6 +8,8 @@ public interface ContactService {
 	
 	public List<ContactVO> getContactList();
 	
+	public List<ContactVO> getContactMemberList(Integer mno);
+	
 	public void register(ContactVO vo);
 	
 	public ContactVO view(Integer cno);
